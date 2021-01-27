@@ -1,0 +1,69 @@
+// Colors
+\:root
+  --col-bg: hsl(0, 0%, 98%)
+  --col-el-bg: hsl(0, 0%, 100%)
+  --col-text: hsl(200, 15%, 8%)
+  
+body.dark
+  --col-bg: hsl(207, 26%, 17%)
+  --col-el-bg: hsl(209, 23%, 22%)
+  --col-text: hsl(0, 0%, 100%)
+
+$col-white: hsl(0, 0%, 100%)
+$col-shadow: rgba(0,0,0,0.1)
+
+// Font family
+$font-family: 'Manrope', sans-serif
+
+// Font weights
+$light: 300
+$semi-bold: 600
+$extra-bold: 800
+
+// Spacing
+$space-max-width: 128rem
+
+// Design elements
+$transition: 150ms ease-in-out
+
+// Reset
+html
+  box-sizing: border-box
+  font-size: 62.5%
+  height: 100%
+
+*, *::before, *::after
+  box-sizing: inherit
+
+body
+  margin: 0
+  overflow-x: hidden
+
+ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, p
+  margin: 0
+
+a
+  text-decoration: none
+
+input, textarea
+  background: none
+  border: none
+  display: block
+  margin: 0
+  padding: 0
+
+textarea
+  resize: none
+
+label
+  display: block
+
+button
+  border: none
+  cursor: pointer
+  outline: none

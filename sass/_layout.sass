@@ -1,0 +1,126 @@
+body
+  background-color: var(--col-bg)
+  color: var(--col-text)
+  font-family: 'Nunito Sans', sans-serif
+  font-size: 1.6rem
+  height: 110vh
+
+h1
+  font-size: 2.5rem
+  letter-spacing: -0.47px
+
+h2
+  font-size: 1.8rem
+  margin-bottom: 1.5rem
+
+p
+  font-size: 1.4rem
+  line-height: 1.7
+
+.container
+  margin: 0 auto
+  max-width: $space-max-width
+  padding: 0 3rem
+  @media screen and (min-width: 1300px)
+    padding: 0
+
+.header
+  background-color: var(--col-el-bg)
+  box-shadow: 0 1px 4px $col-shadow
+  height: 8rem
+  width: 100%
+  & .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100%
+
+.toggle
+  background: none
+  color: var(--col-text)
+  font-weight: $semi-bold
+
+.main
+  padding-bottom: 3rem
+
+.search
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  margin: 3rem 0 3.5rem
+  @media screen and (min-width: 768px)
+    flex-direction: row
+    align-items: center
+    margin: 4.7rem 0 4.8rem
+  &__form
+    display: flex
+    align-items: center
+    background-color: var(--col-el-bg)
+    border-radius: 0.5rem
+    box-shadow: 0 1px 4px $col-shadow
+    padding: 0 3.2rem
+    margin-bottom: 4rem
+    height: 5.7rem
+    width: 100%
+    @media screen and (min-width: 768px)
+      margin-bottom: 0
+      width: 48rem
+    & input
+      outline: none
+      margin-left: 2.7rem
+      letter-spacing: 0.25px
+      height: 3rem
+      width: 100%
+      &::placeholder
+        opacity: 0.6
+    & i
+      opacity: 0.3
+
+.filter
+  & input
+    background-color: var(--col-el-bg)
+    border-radius: 0.5rem
+    box-shadow: 0 1px 4px $col-shadow
+    cursor: pointer
+    padding: 0 2rem 0 3.2rem
+    outline: none
+    height: 5.7rem
+    width: 20rem
+    &::-webkit-calendar-picker-indicator
+      opacity: 100
+
+
+
+.countries
+  display: grid
+  @media screen and (min-width: 576px)
+    gap: 5rem
+    grid-template-columns: repeat(2, 1fr)
+  @media screen and (min-width: 768px)
+    grid-template-columns: repeat(3, 1fr)
+  @media screen and (min-width: 1200px)
+    gap: 7rem
+    grid-template-columns: repeat(4, 1fr)
+
+.country
+  background-color: var(--col-el-bg)
+  border-radius: 0.5rem
+  box-shadow: 0 1px 4px $col-shadow
+  cursor: pointer
+  overflow: hidden
+  height: 33.6rem
+  transition: $transition transform
+  &:hover
+    box-shadow: 0 3px 7px $col-shadow
+    transform: translateY(-0.5rem)
+  &__flag
+    background-color: #DFDFDF
+    background-position: center
+    object-fit: cover
+    height: 16rem
+    width: 100%
+  &__data
+    padding: 2.45rem
+
+.details
+  display: none
