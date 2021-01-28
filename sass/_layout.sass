@@ -3,11 +3,12 @@ body
   color: var(--col-text)
   font-family: 'Nunito Sans', sans-serif
   font-size: 1.6rem
-  height: 110vh
 
 h1
-  font-size: 2.5rem
+  font-size: 2rem
   letter-spacing: -0.47px
+  @media screen and (min-width: 768px)
+    font-size: 2.5rem
 
 h2
   font-size: 1.8rem
@@ -39,6 +40,14 @@ p
   background: none
   color: var(--col-text)
   font-weight: $semi-bold
+  letter-spacing: 0.5px
+  @media screen and (min-width: 768px)
+    font-size: 1.4rem
+  & i
+    font-size: 1.6rem
+    font-weight: $extra-bold
+    margin-right: 0.4rem
+
 
 .main
   padding-bottom: 3rem
@@ -66,35 +75,58 @@ p
       margin-bottom: 0
       width: 48rem
     & input
+      color: var(--col-text)
       outline: none
       margin-left: 2.7rem
       letter-spacing: 0.25px
       height: 3rem
       width: 100%
       &::placeholder
-        opacity: 0.6
+        color: var(--col-text)
+        opacity: 0.7
     & i
       opacity: 0.3
 
 .filter
-  & input
+  font-size: 1.4rem
+  font-weight: $semi-bold
+  background-color: var(--col-el-bg)
+  border-radius: 0.5rem
+  box-shadow: 0 1px 4px $col-shadow
+  cursor: pointer
+  position: relative
+  height: 5.7rem
+  width: 20rem
+  & div
+    display: flex
+    align-items: center
+    padding: 0 2.5rem
+    height: 100%
+  & i
+    margin-left: auto
+  & ul
     background-color: var(--col-el-bg)
     border-radius: 0.5rem
     box-shadow: 0 1px 4px $col-shadow
-    cursor: pointer
-    padding: 0 2rem 0 3.2rem
-    outline: none
-    height: 5.7rem
+    display: none
+    overflow: hidden
+    padding: 0.5rem 0
+    position: absolute
+    margin-top: 0.4rem
     width: 20rem
-    &::-webkit-calendar-picker-indicator
-      opacity: 100
-
+    z-index: 999
+  &.open ul
+    display: block
+  & li
+    padding: 0.5rem 2.5rem
+    &:hover
+      background-color: var(--col-bg)
 
 
 .countries
   display: grid
+  gap: 5rem
   @media screen and (min-width: 576px)
-    gap: 5rem
     grid-template-columns: repeat(2, 1fr)
   @media screen and (min-width: 768px)
     grid-template-columns: repeat(3, 1fr)
@@ -110,6 +142,7 @@ p
   overflow: hidden
   height: 33.6rem
   transition: $transition transform
+  z-index: 0
   &:hover
     box-shadow: 0 3px 7px $col-shadow
     transform: translateY(-0.5rem)
@@ -119,8 +152,65 @@ p
     object-fit: cover
     height: 16rem
     width: 100%
-  &__data
+  &__body
     padding: 2.45rem
 
 .details
-  display: none
+  flex-direction: column
+  align-items: start
+  height: 100%
+  width: 100%
+  &__main
+    display: flex
+    flex-direction: column
+    width: 100%
+    @media screen and (min-width: 768px)
+      flex-direction: row
+  & button
+    background-color: var(--col-el-bg)
+    border-radius: 0.5rem
+    box-shadow: 0px 0px 7px $col-shadow
+    color: var(--col-text)
+    font-size: 1.4rem
+    padding: 0.8rem 3rem
+    margin: 3.5rem 0 6rem
+    @media screen and (min-width: 768px)
+      font-size: 1.5rem
+      padding: 1.3rem 4.5rem
+      margin: 7.9rem 0
+    & i
+      margin-right: 0.7rem
+  &__flag
+    object-fit: cover
+    margin-right: 0
+    height: 28rem
+    width: 100%
+    @media screen and (min-width: 768px)
+      margin-right: 12rem
+      height: 40rem
+      width: 56rem
+  &__body
+    display: flex
+    flex-direction: column
+    width: 60%
+    & h3
+      font-size: 2.8rem
+      margin-top: 3.9rem
+      margin-bottom: 2.6rem
+      @media screen and (min-width: 768px)
+        font-size: 3.2rem
+    & p
+      font-size: 1.4rem
+      line-height: 3.1rem
+      @media screen and (min-width: 768px)
+        font-size: 1.6rem
+        
+  &__content
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    & div
+      &:first-of-type
+        margin-bottom: 3rem
+    @media screen and (min-width: 768px)
+      flex-direction: row

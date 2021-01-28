@@ -66,12 +66,16 @@ body {
   color: var(--col-text);
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
-  height: 110vh;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: -0.47px;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
 h2 {
@@ -112,6 +116,17 @@ p {
   background: none;
   color: var(--col-text);
   font-weight: 600;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 768px) {
+  .toggle {
+    font-size: 1.4rem;
+  }
+}
+.toggle i {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-right: 0.4rem;
 }
 
 .main {
@@ -149,6 +164,7 @@ p {
   }
 }
 .search__form input {
+  color: var(--col-text);
   outline: none;
   margin-left: 2.7rem;
   letter-spacing: 0.25px;
@@ -156,32 +172,61 @@ p {
   width: 100%;
 }
 .search__form input::placeholder {
-  opacity: 0.6;
+  color: var(--col-text);
+  opacity: 0.7;
 }
 .search__form i {
   opacity: 0.3;
 }
 
-.filter input {
+.filter {
+  font-size: 1.4rem;
+  font-weight: 600;
   background-color: var(--col-el-bg);
   border-radius: 0.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  padding: 0 2rem 0 3.2rem;
-  outline: none;
+  position: relative;
   height: 5.7rem;
   width: 20rem;
 }
-.filter input::-webkit-calendar-picker-indicator {
-  opacity: 100;
+.filter div {
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem;
+  height: 100%;
+}
+.filter i {
+  margin-left: auto;
+}
+.filter ul {
+  background-color: var(--col-el-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  position: absolute;
+  margin-top: 0.4rem;
+  width: 20rem;
+  z-index: 999;
+}
+.filter.open ul {
+  display: block;
+}
+.filter li {
+  padding: 0.5rem 2.5rem;
+}
+.filter li:hover {
+  background-color: var(--col-bg);
 }
 
 .countries {
   display: grid;
+  gap: 5rem;
 }
 @media screen and (min-width: 576px) {
   .countries {
-    gap: 5rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -205,6 +250,7 @@ p {
   overflow: hidden;
   height: 33.6rem;
   transition: 150ms ease-in-out transform;
+  z-index: 0;
 }
 .country:hover {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
@@ -217,10 +263,92 @@ p {
   height: 16rem;
   width: 100%;
 }
-.country__data {
+.country__body {
   padding: 2.45rem;
 }
 
 .details {
-  display: none;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+}
+.details__main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .details__main {
+    flex-direction: row;
+  }
+}
+.details button {
+  background-color: var(--col-el-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+  color: var(--col-text);
+  font-size: 1.4rem;
+  padding: 0.8rem 3rem;
+  margin: 3.5rem 0 6rem;
+}
+@media screen and (min-width: 768px) {
+  .details button {
+    font-size: 1.5rem;
+    padding: 1.3rem 4.5rem;
+    margin: 7.9rem 0;
+  }
+}
+.details button i {
+  margin-right: 0.7rem;
+}
+.details__flag {
+  object-fit: cover;
+  margin-right: 0;
+  height: 28rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .details__flag {
+    margin-right: 12rem;
+    height: 40rem;
+    width: 56rem;
+  }
+}
+.details__body {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.details__body h3 {
+  font-size: 2.8rem;
+  margin-top: 3.9rem;
+  margin-bottom: 2.6rem;
+}
+@media screen and (min-width: 768px) {
+  .details__body h3 {
+    font-size: 3.2rem;
+  }
+}
+.details__body p {
+  font-size: 1.4rem;
+  line-height: 3.1rem;
+}
+@media screen and (min-width: 768px) {
+  .details__body p {
+    font-size: 1.6rem;
+  }
+}
+.details__content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.details__content div:first-of-type {
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .details__content {
+    flex-direction: row;
+  }
 }

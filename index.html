@@ -24,33 +24,41 @@
     <div class="container">
 
       <section class="search">
+
         <form id="form" class="search__form">
           <i class="fas fa-search"></i>
           <input id="search" type="text" placeholder="Search for a country..." autocomplete="off">
         </form>
-        <div class="filter">
-          <input list="regions" name="region" placeholder="Filter by Region">
-          <datalist id="regions">
-            <option value="Africa"></option>
-            <option value="America"></option>
-            <option value="Asia"></option>
-            <option value="Europe"></option>
-            <option value="Oceania"></option>
-          </datalist>
+
+        <div id="filter" class="filter">
+          <div>
+            Filter by Region 
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <ul>
+            <li>All</li>
+            <li>Africa</li>
+            <li>America</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
         </div>
       </section>
-
+      
       <section id="countries" class="countries"></section>
 
       <section id="details" class="details">
-        hoaguwgtuagwlikhgyitdzgd
+        <button id="back"><i class="fas fa-arrow-left"></i> Back</button>
+        <div class="details__main">
+          <img class="details__flag" src="">
+          <div class="details__body"></div>
+        </div>
       </section>
 
     </div>
 
-
   </main>
-  <script src="theme.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
